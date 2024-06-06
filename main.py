@@ -144,7 +144,7 @@ def generate_book_structure(prompt: str):
         messages=[
             {
                 "role": "system",
-                "content": "Write in JSON format:\n\n{\"Title of section goes here\":\"Description of section goes here\",\n\"Title of section goes here\":{\"Title of section goes here\":\"Description of section goes here\",\"Title of section goes here\":\"Description of section goes here\",\"Title of section goes here\":\"Description of section goes here\"}}"
+                "content": "Write in JSON format:\n\n{\"章节标题\":\"章节描述\",\n\"章节标题\":{\"子章节标题\":\"子章节描述\",\"子章节标题\":\"子章节描述\",\"子章节标题\":\"子章节描述\"}}"
             },
             {
                 "role": "user",
@@ -170,11 +170,11 @@ def generate_section(prompt: str):
         messages=[
             {
                 "role": "system",
-                "content": "你是一位专家作家。请为提供的章节生成一篇详细的、结构化的长篇文章。"
+                "content": "你是一位专家作家。请为提供的章节生成一篇详细的、结构化的长篇文章,用中文写作。"
             },
             {
                 "role": "user",
-                "content": f"为以下章节生成一篇详细的、结构化的长篇文章:\n\n<section_title>{prompt}</section_title>"
+                "content": f"为以下章节生成一篇详细的、结构化的长篇文章,用中文写作:\n\n<section_title>{prompt}</section_title>"
             }
         ],
         temperature=0.3,
