@@ -148,7 +148,7 @@ def generate_book_structure(prompt: str):
             },
             {
                 "role": "user",
-                "content": f"Write a comprehensive structure, omiting introduction and conclusion sections (forward, author's note, summary), for a long (>300 page) book on the following subject:\n\n<subject>{prompt}</subject>"
+                "content": f"用中文写一篇关于以下主题的长篇书籍结构，省略引言和结论部分（前言，作者说明，摘要):\n\n<subject>{prompt}</subject>"
             }
         ],
         temperature=0.3,
@@ -170,11 +170,11 @@ def generate_section(prompt: str):
         messages=[
             {
                 "role": "system",
-                "content": "You are an expert writer. Generate a long, comprehensive, structured chapter for the section provided."
+                "content": "你是一位专家作家。请为提供的章节生成一篇详细的、结构化的长篇文章。"
             },
             {
                 "role": "user",
-                "content": f"Generate a long, comprehensive, structured chapter for the following section:\n\n<section_title>{prompt}</section_title>"
+                "content": f"为以下章节生成一篇详细的、结构化的长篇文章:\n\n<section_title>{prompt}</section_title>"
             }
         ],
         temperature=0.3,
